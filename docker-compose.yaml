@@ -1,0 +1,15 @@
+services:
+  auth:
+    build: .
+    container_name: auth
+    ports:
+      - "3000:3000"
+    depends_on:
+      - rqlite
+
+  rqlite:
+    image: rqlite/rqlite:latest
+    container_name: rqlite
+    ports:
+      - "4001:4001"
+      - "4002:4002"
