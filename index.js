@@ -12,8 +12,7 @@ const application = new Koa()
 const router = new Router().loadMethods()
 
 router.get('/', (ctx, next) => {
-  ctx.set('Content-Type', 'application/json')
-  ctx.body = JSON.stringify({ service, version })
+  ctx.body = { service, version }
   return next()
 })
 
