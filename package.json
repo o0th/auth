@@ -1,0 +1,29 @@
+{
+  "name": "auth",
+  "version": "0.0.0",
+  "description": "auth service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/o0th/auth.git"
+  },
+  "author": "Sabato Luca Guadagno <o0th@pm.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/o0th/auth/issues"
+  },
+  "homepage": "https://github.com/o0th/auth#readme",
+  "dependencies": {
+    "koa": "^2.15.3",
+    "koa-better-router": "^2.1.1",
+    "koa-body": "^6.0.1",
+    "koa-logger": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
