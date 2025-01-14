@@ -5,7 +5,7 @@ import { DataApiClient } from 'rqlite-js'
 
 const client = new DataApiClient('http://rqlite:4001')
 
-const migrationQuery = `select name from sqlite_master where type = 'table' and name = 'migrations'`
+const migrationQuery = 'select name from sqlite_master where type = \'table\' and name = \'migrations\''
 const migrationQueryResult = await client.query(migrationQuery)
 
 if (migrationQueryResult.hasError()) {
@@ -26,8 +26,6 @@ if (migrationQueryResult.get(0).get('name') === undefined) {
     process.stderr.write(error, 'rqlite create tables results contained an error.\n')
     process.exit(1)
   }
-} else {
-  console.log('migrations exists')
 }
 
 const readdir = util.promisify(fs.readdir)

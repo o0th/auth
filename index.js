@@ -1,6 +1,4 @@
 import fs from 'node:fs'
-const pkg = JSON.parse(fs.readFileSync('./package.json'))
-const { version, name: service } = pkg
 
 import Koa from 'koa'
 import Router from 'koa-better-router'
@@ -8,6 +6,8 @@ import logger from 'koa-logger'
 import { koaBody } from 'koa-body'
 
 import { validate } from './lib/validation.js'
+const pkg = JSON.parse(fs.readFileSync('./package.json'))
+const { version, name: service } = pkg
 
 const application = new Koa()
 const router = new Router().loadMethods()
