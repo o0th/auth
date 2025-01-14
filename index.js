@@ -1,12 +1,13 @@
-const { version, name: service } = require('./package.json')
+import fs from 'node:fs'
+const pkg = JSON.parse(fs.readFileSync('./package.json'))
+const { version, name: service } = pkg
 
-const Koa = require('koa')
-const Router = require('koa-better-router')
+import Koa from 'koa'
+import Router from 'koa-better-router'
+import logger from 'koa-logger'
+import { koaBody } from 'koa-body'
 
-const logger = require('koa-logger')
-const { koaBody } = require('koa-body')
-
-const { validate } = require('./lib/validation')
+import { validate } from './lib/validation.js'
 
 const application = new Koa()
 const router = new Router().loadMethods()

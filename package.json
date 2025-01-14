@@ -3,9 +3,11 @@
   "version": "0.0.0",
   "description": "auth service",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "migration": "node migrations/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,10 +20,12 @@
   },
   "homepage": "https://github.com/o0th/auth#readme",
   "dependencies": {
+    "@babel/runtime": "^7.26.0",
     "koa": "^2.15.3",
     "koa-better-router": "^2.1.1",
     "koa-body": "^6.0.1",
-    "koa-logger": "^3.2.1"
+    "koa-logger": "^3.2.1",
+    "rqlite-js": "^2.5.7"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"

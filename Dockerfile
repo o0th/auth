@@ -4,10 +4,11 @@ WORKDIR /usr/src/auth
 
 COPY package*.json ./
 
+RUN apk --no-cache add curl
 RUN npm install
 
 COPY . .
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+ENTRYPOINT ["/usr/src/auth/entry.sh"]

@@ -13,3 +13,11 @@ services:
     ports:
       - "4001:4001"
       - "4002:4002"
+    volumes:
+      - "./database:/rqlite/file/data"
+    # healthcheck:
+    #   test: ["CMD", "curl", "-f", "http://localhost:4001/readyz?noloeader"]
+    #   interval: 5s
+    #   timeout: 5s
+    #   retries: 5
+    #   start_period: 10s
