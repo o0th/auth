@@ -8,7 +8,7 @@ until [ "$(curl -fs -o /dev/null -w '%{http_code}' 'http://rqlite:4001/readyz')"
 done
 
 echo "Running migrations..."
-npm run migration
+npx knex migrate:latest --env development
 
 echo "Running auth service..."
 npm start
